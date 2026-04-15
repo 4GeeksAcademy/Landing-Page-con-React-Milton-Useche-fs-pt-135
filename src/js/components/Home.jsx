@@ -1,26 +1,33 @@
 import React from "react";
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { NavBar } from "./Navbar";
+import { Head } from "./Head";
+import { Card } from "./Card";
+import { Footerr } from "./Footer";
 
 //create your first component
 const Home = () => {
 	return (
-		<div className="text-center">
-            
+		<div className="d-flex flex-column min-vh-100">
+			<header>
+				<NavBar/>
+				<Head/>
+			</header>
+			<section className="flex-grow-1 d-flex align-items-center">
+				<div className="container-fluid">
+					<div className="row">
+						<Card/>
+						<Card/>
+						<Card/>
+						<Card/>
+					</div>
+				</div>
+			</section>
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<footer className="bg-dark">
+				<Footerr/>
+			</footer>
 		</div>
 	);
 };
